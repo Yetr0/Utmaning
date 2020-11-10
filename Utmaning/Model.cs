@@ -6,6 +6,14 @@ using System.Text;
 
 namespace Utmaning
 {
+    enum Country
+    {
+        Sweden,
+        Norway,
+        Denmark,
+        Finland
+    }
+
     class Platform
     {
         public int Id { get; set; }
@@ -48,7 +56,7 @@ namespace Utmaning
 
         public string Name { get; set; }
 
-        public string Country { get; set; }
+        public Country Country { get; set; }
 
         public int Net_worth { get; set; }
 
