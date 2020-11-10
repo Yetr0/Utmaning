@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Scaffolding;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Utmaning;
 
@@ -24,6 +26,12 @@ namespace DbDemo
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
+            //fixade problemet med PublisherId i Game klassen
+            foreach (var relationship in modelBuilder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))
+            {
+                relationship.DeleteBehavior = DeleteBehavior.Restrict;
+            }
         }
 
     }
