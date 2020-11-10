@@ -27,6 +27,8 @@ namespace Utmaning
     {
         public int id { get; set; }
 
+        public int PlatformId { get; set; }
+
         public int PublisherId { get; set; }
 
         public string Name { get; set; }
